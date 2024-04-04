@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Recognition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/index.css') }}"/>
+</head>
+<body>
+    <div id="wrapper">
+    <div id="header">
+        <h1>Speech Recognition</h1>
+    </div>
+    <div id="SpeechContainer">
+        <h2>Upload file</h2>
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <br>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+    {% if transcript != "" %}
+    <div id="TranscriptContainer">
+        <h2>Transcript</h2>
+        <p id="transcript">{{transcript}}</p>
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>
